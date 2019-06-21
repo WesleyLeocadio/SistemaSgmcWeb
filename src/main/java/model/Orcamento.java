@@ -30,7 +30,10 @@ public class Orcamento implements Serializable {
     @Column(name = "hora_orcamento", updatable = false)
     private Time horaOrcamento;
 
-    
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "orcamento_produto", joinColumns = { @JoinColumn(name ="orcamento_id", referencedColumnName = "id_orcamento") }, 
+    inverseJoinColumns = {@JoinColumn(name = "produto_id") })
+    private List<Produto> produto = new ArrayList<Produto>();
 
  
     public Integer getId() {
@@ -55,6 +58,14 @@ public class Orcamento implements Serializable {
 
     public void setHoraOrcamento(Time horaOrcamento) {
         this.horaOrcamento = horaOrcamento;
+    }
+
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
     }
 
  

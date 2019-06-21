@@ -20,17 +20,8 @@ public class Exemplo {
 
         Session sessao = HibernateUtil.getSessionFactory().openSession();
         Transaction transacao = sessao.beginTransaction();
- 
-    
-         
-         
-             Produto p = new Produto();
-              p.setPreco(2.3);
-              p.setQuantidade(3);
-           sessao.save(p);
 
-         transacao.commit();
-        
+           
         
         //Exemplo1
 //       Endereco endereco1 = new Endereco();
@@ -39,17 +30,22 @@ public class Exemplo {
 //        endereco1.setCidade("Macaiba");
 //        sessao.save(endereco1);
         //Exemplo 2
-//        Cliente cliente1 = new Cliente();
+//        Usuario cliente1 = new Usuario();
 //        cliente1.setNome("Beltrano");
-//
+//        cliente1.setCpf("1200000");
+//        cliente1.setAdmin(true);
+////
 //        Endereco endereco1 = new Endereco();
 //        endereco1.setRua("Rua dos Beltrano, 60");
 //        endereco1.setCidade("Macaiba");
-//
+////
 //        endereco1.setCliente(cliente1);
 //        cliente1.setEndereco(endereco1);
-//
+////
 //        sessao.save(endereco1);
+//        sessao.save(cliente1);
+//        transacao.commit();
+
         //Exemplo 3
 //        Cliente cliente1 = new Cliente();
 //        cliente1.setNome("Beltrano");
@@ -172,8 +168,8 @@ public class Exemplo {
 //
 //        sessao.save(cliente1);
 //
-//        Pedido pedido1 = new Pedido();
-//        pedido1.setDescricao("pedido1");
+//        Orcamento pedido1 = new Orcamento();
+//        pedido1.setDataOrcamento("");
 //        Pedido pedido2 = new Pedido();
 //        pedido2.setDescricao("pedido2");
 //        Pedido pedido3 = new Pedido();
